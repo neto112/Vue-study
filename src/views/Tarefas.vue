@@ -1,17 +1,20 @@
 <template>
-  <hello-world />
+  <div>
+    <v-list flat subheader>
+      <v-list-item-group v-model="settings" multiple active-class="">
+        <Tarefa />
+      </v-list-item-group>
+    </v-list>
+  </div>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import Tarefa from '../components/tarefas/Tarefa.vue'
+export default {
+  name: "Home",
 
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+  components: {
+    Tarefa
+  },
+};
 </script>
-
-  
