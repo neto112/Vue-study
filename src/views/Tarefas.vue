@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-col cols="12" sm="6">
+    <v-col cols="12">
       <v-text-field
         v-model="campoInput"
         label="Qual sua tarefa?"
@@ -38,14 +38,14 @@ export default {
   },
   methods: {
     handleAddTarefa() {
-      if(this.campoInput) {
+      if (this.campoInput) {
         this.tarefas.push({
-          título:this.campoInput,
-          concluído: false
-        })
+          título: this.campoInput,
+          concluído: false,
+        });
         this.campoInput = null;
       }
-    }
-  }
+    },
+  },
 };
 </script>
