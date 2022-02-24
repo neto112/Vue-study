@@ -11,7 +11,7 @@
     </v-col>
     <v-list flat subheader>
       <v-list-item-group multiple active-class="">
-        <div v-for="(tarefa, index) in tarefas" :key="index">
+        <div v-for="(tarefa, index) in $store.state.tarefas" :key="index">
           <Tarefa :tarefa="tarefa" />
         </div>
       </v-list-item-group>
@@ -30,21 +30,12 @@ export default {
   data() {
     return {
       campoInput: null,
-      tarefas: [
-        { título: "Ir ao mercado", concluído: false },
-        { título: "Comprar ração", concluído: false },
-      ],
     };
   },
   methods: {
     handleAddTarefa() {
-      if (this.campoInput) {
-        this.tarefas.push({
-          título: this.campoInput,
-          concluído: false,
-        });
-        this.campoInput = null;
-      }
+      this.$store.commit("adicionaTarefa", this.campoInput);
+      this.campoInput = null;
     },
   },
 };
