@@ -7,8 +7,7 @@ export default new Vuex.Store({
   state: {
     tarefas: [
       {id:1, título: "Ir ao mercado", concluído: false },
-      {id:2, título: "Comprar ração", concluído: false },
-      
+      {id:2, título: "Comprar ração", concluído: false },      
     ],
   },
   mutations: {
@@ -21,6 +20,9 @@ export default new Vuex.Store({
         });
         this.campoInput = null;
       }
+    },
+    removeTarefa(state, id) {
+      state.tarefas = state.tarefas.filter(tarefa => tarefa.id !== id)
     }
   },
   actions: {
