@@ -1,9 +1,3 @@
 <template>
-<div>
-  <span>ola</span>
-</div>
+<span>olá</span>
 </template>
-
-<script>
-
-</script>

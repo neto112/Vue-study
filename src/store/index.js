@@ -27,7 +27,11 @@ export default new Vuex.Store({
     },
     removeTarefa(state, id) {
       state.tarefas = state.tarefas.filter(tarefa => tarefa.id !== id)
-    }
+    },
+    editaTarefa(state, novaTarefa){
+      let tarefa = state.tarefas.filter(tarefa => tarefa.id == novaTarefa.id)[0]
+      tarefa.título = novaTarefa.título;
+    } 
   },
   actions: {
     async adicionaTarefa({commit}, título){

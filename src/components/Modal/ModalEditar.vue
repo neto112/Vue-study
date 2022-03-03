@@ -10,13 +10,14 @@
           label="Título"
           placeholder="Informe um título"
           outlined
+          v-model="título"
         ></v-text-field>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="red darken-1" text @click="dialog = false">
+          <v-btn color="red darken-1" text @click="$emit('fechaModal')">
             Cancelar
           </v-btn>
-          <v-btn color="primary" text @click="dialog = false">
+          <v-btn color="primary" text @click="handleEditar()">
             Editar
           </v-btn>
         </v-card-actions>
@@ -30,7 +31,21 @@ export default {
   data() {
     return {
       dialog: true,
+      título: null,
     };
   },
+  created(){
+    this.título = this.tarefa.título
+  },
+  methods:{
+    handleEditar() {
+      let novaTarefa = {
+        título: this.título, 
+        id: this.tarefa.id
+      }
+      this.$store.commit('editaTarefa', novaTarefa );
+      this.$emit('fechaModal');
+    }
+  }
 };
 </script>
