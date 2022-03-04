@@ -17,9 +17,7 @@
           <v-btn color="red darken-1" text @click="$emit('fechaModal')">
             Cancelar
           </v-btn>
-          <v-btn color="primary" text @click="handleEditar()">
-            Editar
-          </v-btn>
+          <v-btn color="primary" text @click="handleEditar()"> Editar </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -28,24 +26,25 @@
 
 <script>
 export default {
+  props: ["tarefa"],
   data() {
     return {
       dialog: true,
       título: null,
     };
   },
-  created(){
-    this.título = this.tarefa.título
+  created() {
+    this.título = this.tarefa.título;
   },
-  methods:{
+  methods: {
     handleEditar() {
       let novaTarefa = {
-        título: this.título, 
-        id: this.tarefa.id
-      }
-      this.$store.commit('editaTarefa', novaTarefa );
-      this.$emit('fechaModal');
-    }
-  }
+        título: this.título,
+        id: this.tarefa.id,
+      };
+      this.$store.dispatch("editaTarefa", novaTarefa);
+      this.$emit("fechaModal");
+    },
+  },
 };
 </script>

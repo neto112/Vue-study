@@ -21,6 +21,7 @@
 
 <script>
 export default {
+  props: ['tarefa'],
   data() {
     return {
       dialog: true,
@@ -28,7 +29,7 @@ export default {
   },
   methods: {
     handleDeleta() {
-      this.$store.commit("removeTarefa", this.tarefa.id);
+      this.$store.dispatch("removeTarefa", this.tarefa.id);
       this.$emit("fechaModal");
     },
   },
