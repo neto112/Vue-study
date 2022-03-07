@@ -1,3 +1,3 @@
 <template>
-<span>olá</span>
+<span>oláá</span>
 </template>
