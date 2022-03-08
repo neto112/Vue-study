@@ -14,7 +14,10 @@
         class="pt-5 text-center"
       >
         <v-avatar size="100">
-          <img src="https://avatars.githubusercontent.com/u/79769515?v=4" alt="John" />
+          <img
+            src="https://avatars.githubusercontent.com/u/79769515?v=4"
+            alt="John"
+          />
         </v-avatar>
         <v-list-item>
           <v-list-item-content>
@@ -45,6 +48,7 @@
     <v-app-bar
       app
       prominent
+      height="187"
       color="#fcb69f"
       dark
       src="https://picsum.photos/1920/1080?random"
@@ -56,7 +60,9 @@
         ></v-img>
       </template>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-app-bar-title>Title</v-app-bar-title>
+      <center>
+        <v-app-bar-title class="mt-16">Title <InputTarefa /></v-app-bar-title>
+      </center>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>mdi-magnify</v-icon>
@@ -75,7 +81,9 @@
 </template>
 
 <script>
+import InputTarefa from "./components/InputTarefa.vue";
 export default {
+  components: { InputTarefa },
   data: () => ({
     drawer: null,
     items: [
