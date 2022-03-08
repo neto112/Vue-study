@@ -2,7 +2,7 @@
   <div>
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="primary" v-bind="attrs" v-on="on" icon>
+        <v-btn v-bind="attrs" v-on="on" icon>
           <v-icon dark> mdi-dots-vertical</v-icon>
         </v-btn>
       </template>
@@ -43,7 +43,6 @@ export default {
         title: "Editar",
         modal: false,
         click() {
-          console.log("Editar");
           this.modal = true;
         },
       },
@@ -52,7 +51,6 @@ export default {
         title: "Excluir",
         modal: false,
         click() {
-          console.log("Excluir");
           this.modal = true;
         },
       },
@@ -60,5 +58,3 @@ export default {
   }),
 };
 </script>
-
-<style></style>

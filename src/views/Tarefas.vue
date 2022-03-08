@@ -1,7 +1,10 @@
 <template>
   <div>
     <ListaDeTarefas />
-    <div class="mt-16 animate__animated animate__bounce">
+    <div
+      v-if="!$store.state.tarefas.length"
+      class="mt-16 animate__animated animate__bounce"
+    >
       <center>
         <v-icon size="100" color="primary">mdi-check</v-icon>
         <div class="text-h5 primary--text">Nenhuma tarefa</div>

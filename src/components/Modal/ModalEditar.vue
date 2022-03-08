@@ -8,7 +8,6 @@
         <v-text-field
           class="px-3"
           label="Título"
-          placeholder="Informe um título"
           outlined
           v-model="título"
         ></v-text-field>
